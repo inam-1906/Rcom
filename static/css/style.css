@@ -5,6 +5,7 @@
 
 /* Accent font (optional) */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
 /* Reset and Base Styles */
 :root {
     --nav-height: 100px;

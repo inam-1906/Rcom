@@ -7,8 +7,20 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
     <!-- Responsive Behavior -->
 <style>
+      /* Set Montserrat as base font for all regular text */
+  body, p, li, a, span, button, input, textarea, select {
+    font-family: 'Montserrat', sans-serif !important;
+  }
+
+  /* Set Amatic SC for all headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Amatic SC', cursive !important;
+    letter-spacing: 1px;
+  }
 @media (max-width: 600px) {
   /* Hide tag logo + hole on mobile */
   .tag-logo, .logo-hole {
@@ -81,7 +93,7 @@
         <img src="{{ url_for('static', filename='images/logo.png') }}" 
              alt="RECOM Logo" 
              class="responsive-logo"
-             style="width: 180px; height: 150px;">
+             style="width: 150px; height: 150px;">
     </div>
 </div>
 
@@ -178,6 +190,8 @@
     <section id="about">
         <div class="container">
             <div class="section-header">
+            </br>
+        </br>
                 <h2 class="section-title" style="color: #FF6B35;">About RECOM</h2>
                 <p class="section-subtitle">Where Creativity Meets Excellence</p>
             </div>
@@ -191,15 +205,15 @@
                     </p>
                     <div class="stats-container">
                         <div class="stat-item">
-                            <div class="stat-number" data-count="500" style="color: #FF6B35;">0</div>
+                            <div class="stat-number" data-count="150" style="color: #FF6B35;">0</div>
                             <div class="stat-label">Projects Completed</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number" data-count="150" style="color: #FF6B35;">0</div>
+                            <div class="stat-number" data-count="100" style="color: #FF6B35;">0</div>
                             <div class="stat-label">Happy Clients</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number" data-count="99" style="color: #FF6B35;">0</div>
+                            <div class="stat-number" data-count="90" style="color: #FF6B35;">0</div>
                             <div class="stat-label">Satisfaction Rate %</div>
                         </div>
                     </div>
@@ -342,7 +356,8 @@
                         <li><i class="fas fa-check" style="color: #FF6B35;"></i> Responsive Website Design</li>
                         <li><i class="fas fa-check" style="color: #FF6B35;"></i> E-Commerce Development</li>
                         <li><i class="fas fa-check" style="color: #FF6B35;"></i> Custom Web Applications</li>
-                        <li><i class="fas fa-check" style="color: #FF6B35;"></i> Website Maintenance & Support</li>
+                        <li><i class="fas fa-check" style="color: #FF6B35;"></i> Website Maintenance and Support</li>
+                    
                     </ul>
                     <div class="course-price">
                         <span class="price" style="color: #FF6B35;">Custom Quote</span>
@@ -367,11 +382,12 @@
                     </div>
                     <h3 style="color: #FF6B35;">Graphic Design Services</h3>
                     <p>Creative visual solutions including professional logo design, complete branding packages, marketing materials, and stunning digital artwork that captivate your audience and strengthen your brand identity.</p>
+                </br>
                     <ul class="course-features">
                         <li><i class="fas fa-check" style="color: #FF6B35;"></i> Logo & Brand Identity Design</li>
                         <li><i class="fas fa-check" style="color: #FF6B35;"></i> Marketing Materials & Brochures</li>
                         <li><i class="fas fa-check" style="color: #FF6B35;"></i> Social Media Graphics</li>
-                        <li><i class="fas fa-check" style="color: #FF6B35;"></i> Print & Digital Design Solutions</li>
+                        <li><i class="fas fa-check" style="color: #FF6B35;"></i> graphic Prints and Digital Design Solutions</li>
                     </ul>
                     <div class="course-price">
                         <span class="price" style="color: #FF6B35;">Custom Quote</span>
@@ -397,6 +413,8 @@
     <section id="portfolio" style="background-color:rgba(47, 32, 26, 0);">
         <div class="container" class="gallery-section">
             <div class="section-header">
+            </br>
+        </br>
                 <h2 class="section-title" style="color: #FF6B35;">Our Work Portfolio</h2>
                 <p class="section-subtitle">Showcasing Excellence in Every Project</p>
             </div>
@@ -458,8 +476,9 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <p style="font-style: italic; color: #555; line-height: 1.6; margin-bottom: 20px;">"RECOM transformed our online presence completely. Their web development team delivered a stunning e-commerce platform that increased our sales by 300% within six months. Their attention to detail and strategic approach was impressive."</p>
+                </br>
                     <div class="testimonial-author" style="display: flex; align-items: center;">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-right: 15px; border: 2px solid #FF6B35;">
+                       <span style="width: 50px; height: 50px; border-radius: 50%; background-color: #4A90E2; color: white; display: inline-flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold; font-size: 16px;">AK</span>
                         <div>
                             <h4 style="color: #FF6B35; margin: 0;">Ahmed Khan</h4>
                             <p style="color: #777; margin: 5px 0 0; font-size: 14px;">CEO, Fashion Boutique</p>
@@ -477,7 +496,7 @@
                     </div>
                     <p style="font-style: italic; color: #555; line-height: 1.6; margin-bottom: 20px;">"The digital marketing campaign RECOM developed for our startup was phenomenal. They understood our target audience perfectly and delivered measurable results that exceeded our expectations. Truly a professional team that cares about client success."</p>
                     <div class="testimonial-author" style="display: flex; align-items: center;">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-right: 15px; border: 2px solid #FF6B35;">
+                        <span style="width: 50px; height: 50px; border-radius: 50%; background-color: #4A90E2; color: white; display: inline-flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold; font-size: 16px;">FA</span>
                         <div>
                             <h4 style="color: #FF6B35; margin: 0;">Fatima Ali</h4>
                             <p style="color: #777; margin: 5px 0 0; font-size: 14px;">Marketing Director, Tech Startup</p>
@@ -494,8 +513,9 @@
                         <i class="fas fa-star-half-alt"></i>
                     </div>
                     <p style="font-style: italic; color: #555; line-height: 1.6; margin-bottom: 20px;">"Working with RECOM on our brand identity was a game-changer. Their designers captured our vision perfectly and delivered a complete branding package that has elevated our professional image across all platforms. Highly recommended!"</p>
+                </br>
                     <div class="testimonial-author" style="display: flex; align-items: center;">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-right: 15px; border: 2px solid #FF6B35;">
+                        <span style="width: 50px; height: 50px; border-radius: 50%; background-color: #4A90E2; color: white; display: inline-flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold; font-size: 16px;">UM</span>
                         <div>
                             <h4 style="color: #FF6B35; margin: 0;">Usman Malik</h4>
                             <p style="color: #777; margin: 5px 0 0; font-size: 14px;">Founder, Consulting Firm</p>
@@ -586,7 +606,14 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3 style="color: #FF6B35;">RECOM</h3>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+  <div style="width: 120px; height: 70px; background-color: white; border: 1px solid #ddd; border-radius: 0px; padding-left: 10px; box-sizing: border-box;">
+    <img src="static/images/logo.png" alt="Logo" style="width: 100px; height: 80px; object-fit: contain;">
+  </br>
+  </div>
+  
+</div>
+</br>
                     <p>Delivering exceptional digital services and creative solutions that drive business growth, enhance online presence, and ensure long-term success in the digital marketplace.</p>
                     <div class="social-links">
                         <a href="#" style="color: #FF6B35; transition: all 0.3s ease;" onmouseover="this.style.color='#F7931E'" onmouseout="this.style.color='#FF6B35'"><i class="fab fa-facebook-f"></i></a>
