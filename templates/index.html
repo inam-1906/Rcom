@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECOM - Professional Digital Services</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Responsive Behavior -->
+<style>
+@media (max-width: 600px) {
+  /* Hide tag logo + hole on mobile */
+  .tag-logo, .logo-hole {
+    display: none !important;
+  }
+
+  /* Show clean logo on mobile */
+  .mobile-logo {
+    display: block !important;
+  }
+
+  /* Increase logo size on mobile */
+  .responsive-logo {
+    width: 100px !important;
+    height: 100px !important;
+  }
+}
+</style>
+</head>
+<body>
+    <!-- Floating Background Elements -->
+    <div class="floating-elements">
+        <div class="floating-circle circle-1"></div>
+        <div class="floating-circle circle-2"></div>
+        <div class="floating-circle circle-3"></div>
+        <div class="floating-circle circle-4"></div>
+        <div class="floating-circle circle-5"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <!-- Hanging hole (fake string hole) -->
+
+
+<!-- Tag-style Logo for Desktop -->
+<div class="logo-container" style="display: inline-block;">
+
+   
+
+    <!-- Tag-style container -->
+    <div class="tag-logo" style="
+        width: 180px;
+        height: 120px;
+        background: linear-gradient(to bottom right,rgb(245, 245, 245), #ff9f1c);
+        clip-path: polygon(0 20px, 50% 0, 100% 20px, 100% 90%, 75% 100%, 50% 90%, 25% 100%, 0 90%);
+        border: 2px solid #b94700;
+        border-radius: 6px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    ">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" 
+             alt="RECOM Logo" 
+             class="responsive-logo"
+             style="width: 180px; height: 150px;">
+    </div>
+</div>
+
+<!-- Mobile-only Logo (NO TAG) -->
+<div class="mobile-logo" style="display: none; text-align: center;">
+    <img src="{{ url_for('static', filename='images/logo.png') }}"
+         alt="RECOM Logo"
+         class="responsive-logo"
+         style="width: 100px; height: 100px;">
+</div>
+                
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#why-us" class="nav-link">Why Choose Us</a></li>
+                <li><a href="#testimonials" class="nav-link">Client Reviews</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="tech-gear-background">
+            <img src="{{ url_for('static', filename='images/globe.png') }}" alt="Tech Gear">
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="gradient-text" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Transform Your Business</span>
+                    <br>
+                    <span class="hero-subtitle">With Professional Digital Services</span>
+                </h1>
+                <p class="hero-description">
+                    We deliver exceptional digital marketing, web development, and creative solutions 
+                    that elevate your brand, increase online visibility, and drive measurable results for sustainable business growth.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary pulse-btn" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); border: none; padding: 18px 35px; border-radius: 50px; color: white; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);" onclick="window.open('https://wa.me/+923041234567?text=Hello RECOM! I want to start a project with you.', '_blank')">
+                        <i class="fab fa-whatsapp" style="margin-right: 8px;"></i>Get Started Today
+                    </button>
+                    <button class="btn-secondary" style="border: 2px solid #FF6B35; color: #FF6B35; background: transparent; padding: 16px 30px; border-radius: 50px; cursor: pointer; transition: all 0.3s ease;" onclick="window.location.href='#portfolio'">View Our Work</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <!-- Web Development - Blue -->
+                <div class="floating-card card-1">
+                    <i class="fas fa-laptop-code" style="color: #FF6B35; text-shadow: 0 2px 5px rgba(255, 107, 53, 0.3);"></i>
+                    <span>Web Development</span>
+                </div>
+                
+                <!-- Digital Marketing - Orange -->
+                <div class="floating-card card-2">
+                    <i class="fas fa-line-chart" style="color: #F7931E; text-shadow: 0 2px 5px rgba(247, 147, 30, 0.3);"></i>
+                    <span>Digital Marketing</span>
+                </div>
+                
+                <!-- Graphic Design - Purple -->
+                <div class="floating-card card-3">
+                    <i class="fas fa-paint-brush" style="color: #FF8C42; text-shadow: 0 2px 5px rgba(255, 140, 66, 0.3);"></i>
+                    <span>Graphic Design</span>
+                </div>
+                
+                <!-- SEO Marketing - Orange -->
+                <div class="floating-card card-4">
+                    <i class="fas fa-search-dollar" style="color: #FF6B35; text-shadow: 0 2px 5px rgba(255, 107, 53, 0.3);"></i>
+                    <span>SEO Services</span>
+                </div>
+
+                <!-- E-Commerce - Orange -->
+                <div class="floating-card card-5">
+                    <i class="fas fa-shopping-cart" style="color: #F7931E; text-shadow: 0 2px 5px rgba(247, 147, 30, 0.3);"></i>
+                    <span>E-Commerce Solutions</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" style="color: #FF6B35;">About RECOM</h2>
+                <p class="section-subtitle">Where Creativity Meets Excellence</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 style="color: #FF6B35;">Your Trusted Digital Partner</h3>
+                    <p>
+                        At RECOM, we're not just service providers – we're your strategic digital transformation partners. 
+                        Our talented team of experts combines cutting-edge technologies, proven methodologies, and creative innovation 
+                        to deliver exceptional results that accelerate your business growth and exceed your expectations.
+                    </p>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="500" style="color: #FF6B35;">0</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="150" style="color: #FF6B35;">0</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="99" style="color: #FF6B35;">0</div>
+                            <div class="stat-label">Satisfaction Rate %</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="skill-orb orb-1">
+                        <i class="fab fa-html5" style="color: #FF6B35;"></i>
+                    </div>
+                    <div class="skill-orb orb-2">
+                        <i class="fab fa-css3-alt" style="color: #F7931E;"></i>
+                    </div>
+                    <div class="skill-orb orb-3">
+                        <i class="fab fa-js-square" style="color: #FF8C42;"></i>
+                    </div>
+                    <div class="skill-orb orb-4">
+                        <i class="fab fa-react" style="color: #FF6B35;"></i>
+                    </div>
+                    <div class="skill-orb orb-5">
+                        <i class="fab fa-python" style="color: #F7931E;"></i>
+                    </div>
+                    <div class="skill-orb orb-6">
+                        <i class="fab fa-adobe" style="color: #FF8C42;"></i>
+                    </div>
+                    <div class="skill-orb orb-7">
+                        <i class="fab fa-wordpress" style="color: #FF6B35;"></i>
+                    </div>
+                    <div class="skill-orb orb-8">
+                        <i class="fab fa-google" style="color: #F7931E;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" style="background-color:rgba(249, 249, 249, 0); padding: 80px 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" style="color: #FF6B35;">Why Choose RECOM?</h2>
+                <p class="section-subtitle">The Competitive Advantages That Set Us Apart</p>
+            </div>
+            
+            <div class="advantages-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px;">
+                <div class="advantage-card" style="background: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="advantage-icon" style="background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.1) 100%); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                        <i class="fas fa-medal" style="font-size: 30px; color: #FF6B35;"></i>
+                    </div>
+                    <h3 style="color: #FF6B35; margin-bottom: 15px;">Proven Expertise</h3>
+                    <p style="color: #555; line-height: 1.6;">With over a decade of industry experience, our team brings deep technical knowledge and creative excellence to every project, ensuring superior results that drive business growth.</p>
+                </div>
+                
+                <div class="advantage-card" style="background: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="advantage-icon" style="background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.1) 100%); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                        <i class="fas fa-chart-line" style="font-size: 30px; color: #FF6B35;"></i>
+                    </div>
+                    <h3 style="color: #FF6B35; margin-bottom: 15px;">Results-Driven Approach</h3>
+                    <p style="color: #555; line-height: 1.6;">We focus on delivering measurable business outcomes, not just technical deliverables. Our strategies are designed to maximize ROI and achieve your specific business objectives.</p>
+                </div>
+                
+                <div class="advantage-card" style="background: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="advantage-icon" style="background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.1) 100%); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                        <i class="fas fa-users" style="font-size: 30px; color: #FF6B35;"></i>
+                    </div>
+                    <h3 style="color: #FF6B35; margin-bottom: 15px;">Client-Centric Philosophy</h3>
+                    <p style="color: #555; line-height: 1.6;">Your success is our priority. We take time to understand your unique needs and maintain transparent communication throughout our partnership.</p>
+                </div>
+                
+                <div class="advantage-card" style="background: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="advantage-icon" style="background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.1) 100%); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                        <i class="fas fa-lightbulb" style="font-size: 30px; color: #FF6B35;"></i>
+                    </div>
+                    <h3 style="color: #FF6B35; margin-bottom: 15px;">Innovative Solutions</h3>
+                    <p style="color: #555; line-height: 1.6;">We stay ahead of industry trends to provide forward-thinking solutions that give you a competitive edge in your market.</p>
+                </div>
+                
+                <div class="advantage-card" style="background: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="advantage-icon" style="background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.1) 100%); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                        <i class="fas fa-handshake" style="font-size: 30px; color: #FF6B35;"></i>
+                    </div>
+                    <h3 style="color: #FF6B35; margin-bottom: 15px;">Long-Term Partnership</h3>
+                    <p style="color: #555; line-height: 1.6;">We build lasting relationships, offering ongoing support and strategic guidance to help your business evolve and grow over time.</p>
+                </div>
+                
+                <div class="advantage-card" style="background: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="advantage-icon" style="background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.1) 100%); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                        <i class="fas fa-shield-alt" style="font-size: 30px; color: #FF6B35;"></i>
+                    </div>
+                    <h3 style="color: #FF6B35; margin-bottom: 15px;">Quality Assurance</h3>
+                    <p style="color: #555; line-height: 1.6;">Our rigorous quality control processes ensure flawless deliverables that meet the highest industry standards every time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container" class="services-section">
+            <div class="section-header">
+                <h2 class="section-title" style="color: #FF6B35;">Our Professional Services</h2>
+                <p class="section-subtitle">Comprehensive Digital Solutions for Business Growth</p>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card" data-service="digital-marketing">
+                    <div class="course-icon">
+                        <i class="fas fa-chart-line" style="color: #FF6B35;"></i>
+                    </div>
+                    <h3 style="color: #FF6B35;">Digital Marketing Services</h3>
+                    <p>Boost your online presence with our comprehensive digital marketing strategies, advanced SEO optimization, targeted social media campaigns, and data-driven marketing solutions that generate leads and increase conversions.</p>
+                    <ul class="course-features">
+                        <li><i class="fas fa-check" style="color: #FF6B35;"></i> Advanced SEO & Local SEO</li>
+                        <li><i class="fas fa-check" style="color: #FF6B35;"></i> Google Ads & Facebook Marketing</li>
+                        <li><i class="fas fa-check" style="color: #FF6B35;"></i> Social Media Management</li>
+                        <li><i class="fas fa-check" style="color: #FF6B35;"></i> Content Marketing & Email Campaigns</li>
+                    </ul>
+                    <div class="course-price">
+                        <span class="price" style="color: #FF6B35;">Custom Quote</span>
+                        <span class="duration">Based on Requirements</span>
+                    </div>
+                    <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
+                        <button class="course-btn" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); color: white; border: none; padding: 12px 20px; border-radius: 25px; cursor: pointer; transition: all 0.3s ease; font-size: 14px;" onclick="window.open('https://wa.me/+923069844462?text=Hello RECOM! I need Digital Marketing services.', '_blank')">
+                            <i class="fab fa-whatsapp"></i>
+                        </button>
+                        <button class="course-btn" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); color: white; border: none; padding: 12px 20px; border-radius: 25px; cursor: pointer; transition: all 0.3s ease; font-size: 14px;" onclick="window.open('tel:+923069844462')">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                        <button class="course-btn" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); color: white; border: none; padding: 12px 20px; border-radius: 25px; cursor: pointer; transition: all 0.3s ease; font-size: 14px;" onclick="window.open('mailto:russellsecom@gmail.com?subject=Digital Marketing Inquiry')">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="course-card featured" data-service="web-development" style="border: 3px solid #FF6B35;">
+                    <div class="featured-badge" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);">Most Popular</div>
+                    <div class="course-icon">
+                        <i class="fas fa-code" style="color: #FF6B35;"></i>
+                    </div>
+                    <h3 style="color: #FF6B35;">Web Development Services</h3>
+                    <p>Custom websites and web applications built with modern technologies, responsive design, optimal performance, and user-friendly interfaces that convert visitors into customers and enhance your online presence.</p>
+                    <ul class="course-features">
+                        <li><i class="fas fa-check" style="color: #FF6B35;"></i> Responsive Website Design</li>
+                        <li><i class="fas fa-check" style="color: #FF6B35;"></i> E-Commerce Development</li>
+                        <li><i class="fas fa-check" style="color: #FF6B35;"></i> Custom Web Applications</li>
+                        <li><i class="fas fa-check" style="color: #FF6B35;"></i> Website Maintenance & Support</li>
+                    </ul>
+                    <div class="course-price">
+                        <span class="price" style="color: #FF6B35;">Custom Quote</span>
+                        <span class="duration">Based on Complexity</span>
+                    </div>
+                    <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
+                        <button class="course-btn" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); color: white; border: none; padding: 12px 20px; border-radius: 25px; cursor: pointer; transition: all 0.3s ease; font-size: 14px;" onclick="window.open('https://wa.me/+923069844462?text=Hello RECOM! I need Web Development services.', '_blank')">
+                            <i class="fab fa-whatsapp"></i>
+                        </button>
+                        <button class="course-btn" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); color: white; border: none; padding: 12px 20px; border-radius: 25px; cursor: pointer; transition: all 0.3s ease; font-size: 14px;" onclick="window.open('tel:+923069844462')">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                        <button class="course-btn" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); color: white; border: none; padding: 12px 20px; border-radius: 25px; cursor: pointer; transition: all 0.3s ease; font-size: 14px;" onclick="window.open('mailto:russellsecom@gmail.com?subject=Web Development Inquiry')">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-service="graphic-design">
+                    <div class="course-icon">
+                        <i class="fas fa-paint-brush" style="color: #FF6B35;"></i>
+                    </div>
+                    <h3 style="color: #FF6B35;">Graphic Design Services</h3>
+                    <p>Creative visual solutions including professional logo design, complete branding packages, marketing materials, and stunning digital artwork that captivate your audience and strengthen your brand identity.</p>
+                    <ul class="course-features">
+                        <li><i class="fas fa-check" style="color: #FF6B35;"></i> Logo & Brand Identity Design</li>
+                        <li><i class="fas fa-check" style="color: #FF6B35;"></i> Marketing Materials & Brochures</li>
+                        <li><i class="fas fa-check" style="color: #FF6B35;"></i> Social Media Graphics</li>
+                        <li><i class="fas fa-check" style="color: #FF6B35;"></i> Print & Digital Design Solutions</li>
+                    </ul>
+                    <div class="course-price">
+                        <span class="price" style="color: #FF6B35;">Custom Quote</span>
+                        <span class="duration">Per Design Package</span>
+                    </div>
+                    <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
+                        <button class="course-btn" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); color: white; border: none; padding: 12px 20px; border-radius: 25px; cursor: pointer; transition: all 0.3s ease; font-size: 14px;" onclick="window.open('https://wa.me/++923069844462?text=Hello RECOM! I need Graphic Design services.', '_blank')">
+                            <i class="fab fa-whatsapp"></i>
+                        </button>
+                        <button class="course-btn" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); color: white; border: none; padding: 12px 20px; border-radius: 25px; cursor: pointer; transition: all 0.3s ease; font-size: 14px;" onclick="window.open('tel:+923069844462')">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                        <button class="course-btn" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); color: white; border: none; padding: 12px 20px; border-radius: 25px; cursor: pointer; transition: all 0.3s ease; font-size: 14px;" onclick="window.open('mailto:russellsecom@gmail.com?subject=Graphic Design Inquiry')">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" style="background-color:rgba(47, 32, 26, 0);">
+        <div class="container" class="gallery-section">
+            <div class="section-header">
+                <h2 class="section-title" style="color: #FF6B35;">Our Work Portfolio</h2>
+                <p class="section-subtitle">Showcasing Excellence in Every Project</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="website">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Website Design Project">
+                    <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(255, 107, 53, 0.9) 0%, rgba(247, 147, 30, 0.9) 100%);">
+                        <h3>Corporate Website</h3>
+                        <p>Modern, responsive design with enhanced user experience and mobile optimization</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="branding">
+                    <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Branding Project">
+                    <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(255, 107, 53, 0.9) 0%, rgba(247, 147, 30, 0.9) 100%);">
+                        <h3>Brand Identity</h3>
+                        <p>Complete branding solution with logo design and comprehensive marketing materials</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="ecommerce">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="E-commerce Project">
+                    <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(255, 107, 53, 0.9) 0%, rgba(247, 147, 30, 0.9) 100%);">
+                        <h3>E-Commerce Store</h3>
+                        <p>Full-featured online store with secure payment integration and inventory management</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="marketing">
+                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Marketing Campaign">
+                    <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(255, 107, 53, 0.9) 0%, rgba(247, 147, 30, 0.9) 100%);">
+                        <h3>Marketing Campaign</h3>
+                        <p>Successful digital marketing campaign with 400% ROI and increased brand awareness</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="design">
+                    <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Design Project">
+                    <div class="gallery-overlay" style="background: linear-gradient(135deg, rgba(255, 107, 53, 0.9) 0%, rgba(247, 147, 30, 0.9) 100%);">
+                        <h3>Creative Design</h3>
+                        <p>Award-winning design solution for international client with global recognition</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" style="padding: 80px 0; background-color:rgba(249, 249, 249, 0);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" style="color: #FF6B35;">Client Testimonials</h2>
+                <p class="section-subtitle">What Our Clients Say About Our Services</p>
+            </div>
+            
+            <div class="testimonials-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px;">
+                <div class="testimonial-card" style="background: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: relative;">
+                    <div class="testimonial-rating" style="color: #FF6B35; margin-bottom: 15px;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p style="font-style: italic; color: #555; line-height: 1.6; margin-bottom: 20px;">"RECOM transformed our online presence completely. Their web development team delivered a stunning e-commerce platform that increased our sales by 300% within six months. Their attention to detail and strategic approach was impressive."</p>
+                    <div class="testimonial-author" style="display: flex; align-items: center;">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-right: 15px; border: 2px solid #FF6B35;">
+                        <div>
+                            <h4 style="color: #FF6B35; margin: 0;">Ahmed Khan</h4>
+                            <p style="color: #777; margin: 5px 0 0; font-size: 14px;">CEO, Fashion Boutique</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" style="background: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: relative;">
+                    <div class="testimonial-rating" style="color: #FF6B35; margin-bottom: 15px;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p style="font-style: italic; color: #555; line-height: 1.6; margin-bottom: 20px;">"The digital marketing campaign RECOM developed for our startup was phenomenal. They understood our target audience perfectly and delivered measurable results that exceeded our expectations. Truly a professional team that cares about client success."</p>
+                    <div class="testimonial-author" style="display: flex; align-items: center;">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-right: 15px; border: 2px solid #FF6B35;">
+                        <div>
+                            <h4 style="color: #FF6B35; margin: 0;">Fatima Ali</h4>
+                            <p style="color: #777; margin: 5px 0 0; font-size: 14px;">Marketing Director, Tech Startup</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" style="background: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: relative;">
+                    <div class="testimonial-rating" style="color: #FF6B35; margin-bottom: 15px;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p style="font-style: italic; color: #555; line-height: 1.6; margin-bottom: 20px;">"Working with RECOM on our brand identity was a game-changer. Their designers captured our vision perfectly and delivered a complete branding package that has elevated our professional image across all platforms. Highly recommended!"</p>
+                    <div class="testimonial-author" style="display: flex; align-items: center;">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-right: 15px; border: 2px solid #FF6B35;">
+                        <div>
+                            <h4 style="color: #FF6B35; margin: 0;">Usman Malik</h4>
+                            <p style="color: #777; margin: 5px 0 0; font-size: 14px;">Founder, Consulting Firm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <button class="btn-primary" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); border: none; padding: 18px 35px; border-radius: 50px; color: white; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);" onclick="window.open('https://wa.me/+923041234567?text=Hello RECOM! I want to discuss my project.', '_blank')">
+                    <i class="fas fa-comment-alt" style="margin-right: 8px;"></i>Share Your Experience
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" style="color: #FF6B35;">Let's Work Together</h2>
+                <p class="section-subtitle">Ready to Transform Your Business?</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 style="color: #FF6B35;">Start Your Digital Journey Today</h3>
+                    <p>Ready to take your business to the next level? Contact our expert team and discover how RECOM can deliver exceptional results for your digital transformation needs. We're here to help you succeed!</p>
+                    
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt" style="color: #FF6B35;"></i>
+                            <div>
+                                <h4>Our Office</h4>
+                                <p>Sargodha, Punjab, Pakistan</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone" style="color: #FF6B35;"></i>
+                            <div>
+                                <h4>Call Us</h4>
+                                <p>+923069844462</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope" style="color: #FF6B35;"></i>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p>russellsecom@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Full Name" required style="border: 2px solid #e1e5e9; border-radius: 10px; padding: 15px; width: 100%; box-sizing: border-box; transition: all 0.3s ease;" onfocus="this.style.borderColor='#FF6B35'" onblur="this.style.borderColor='#e1e5e9'">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email Address" required style="border: 2px solid #e1e5e9; border-radius: 10px; padding: 15px; width: 100%; box-sizing: border-box; transition: all 0.3s ease;" onfocus="this.style.borderColor='#FF6B35'" onblur="this.style.borderColor='#e1e5e9'">
+                        </div>
+                        <div class="form-group">
+                            <select name="service" required style="border: 2px solid #e1e5e9; border-radius: 10px; padding: 15px; width: 100%; box-sizing: border-box; transition: all 0.3s ease; background: white;" onfocus="this.style.borderColor='#FF6B35'" onblur="this.style.borderColor='#e1e5e9'">
+                                <option value="">Select Service</option>
+                                <option value="web-development">Web Development</option>
+                                <option value="digital-marketing">Digital Marketing</option>
+                                <option value="graphic-design">Graphic Design</option>
+                                <option value="seo-services">SEO Services</option>
+                                <option value="ecommerce">E-Commerce Solutions</option>
+                                <option value="consultation">Free Consultation</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Tell us about your project requirements and goals..." rows="5" required style="border: 2px solid #e1e5e9; border-radius: 10px; padding: 15px; width: 100%; box-sizing: border-box; resize: vertical; transition: all 0.3s ease;" onfocus="this.style.borderColor='#FF6B35'" onblur="this.style.borderColor='#e1e5e9'"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); color: white; border: none; padding: 18px 40px; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; width: 100%; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 10px;" onclick="event.preventDefault(); sendWhatsAppMessage();">
+                            <span>Send WhatsApp Message</span>
+                            <i class="fab fa-whatsapp"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 style="color: #FF6B35;">RECOM</h3>
+                    <p>Delivering exceptional digital services and creative solutions that drive business growth, enhance online presence, and ensure long-term success in the digital marketplace.</p>
+                    <div class="social-links">
+                        <a href="#" style="color: #FF6B35; transition: all 0.3s ease;" onmouseover="this.style.color='#F7931E'" onmouseout="this.style.color='#FF6B35'"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="color: #FF6B35; transition: all 0.3s ease;" onmouseover="this.style.color='#F7931E'" onmouseout="this.style.color='#FF6B35'"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: #FF6B35; transition: all 0.3s ease;" onmouseover="this.style.color='#F7931E'" onmouseout="this.style.color='#FF6B35'"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" style="color: #FF6B35; transition: all 0.3s ease;" onmouseover="this.style.color='#F7931E'" onmouseout="this.style.color='#FF6B35'"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 style="color: #FF6B35;">Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#why-us">Why Choose Us</a></li>
+                        <li><a href="#testimonials">Client Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 style="color: #FF6B35;">Our Services</h4>
+                    <ul>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                        <li><a href="#">SEO Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 style="color: #FF6B35;">Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-phone" style="color: #FF6B35;"></i> +923069844462</li>
+                        <li><i class="fas fa-envelope" style="color: #FF6B35;"></i> russellsecom@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt" style="color: #FF6B35;"></i> Sargodha, Punjab, PK</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 RECOM Services. All rights reserved. | Crafted with <span style="color: #FF6B35;">❤️</span> for business success</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Contact Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/+923069844462?text=Hello RECOM! I want to discuss my project." target="_blank" class="float-btn whatsapp" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3); transition: all 0.3s ease; margin: 10px 0;">
+            <i class="fab fa-whatsapp" style="font-size: 24px;"></i>
+        </a>
+        <a href="mailto:russellsecom@gmail.com?subject=Project Inquiry" class="float-btn gmail" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3); transition: all 0.3s ease; margin: 10px 0;">
+            <i class="fas fa-envelope" style="font-size: 20px;"></i>
+        </a>
+        <a href="tel:+923069844462" class="float-btn phone" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3); transition: all 0.3s ease; margin: 10px 0;">
+            <i class="fas fa-phone-alt" style="font-size: 20px;"></i>
+        </a>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div id="messagePopup" class="message-popup">
+        <div class="message-content">
+            <i class="message-icon"></i>
+            <p class="message-text"></p>
+            <button class="message-close">&times;</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    
+    <script>
+        // WhatsApp form submission function
+        function sendWhatsAppMessage() {
+            const form = document.getElementById('contactForm');
+            const formData = new FormData(form);
+            
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const service = formData.get('service');
+            const message = formData.get('message');
+            
+            if (!name || !email || !service || !message) {
+                alert('Please fill all fields before sending message!');
+                return;
+            }
+            
+            const whatsappMessage = `Hello RECOM!%0A%0A` +
+                `Name: ${encodeURIComponent(name)}%0A` +
+                `Email: ${encodeURIComponent(email)}%0A` +
+                `Service: ${encodeURIComponent(service)}%0A` +
+                `Message: ${encodeURIComponent(message)}%0A%0A` +
+                `I'm interested in your services. Please contact me back!`;
+            
+            window.open(`https://wa.me/+923069844462?text=${whatsappMessage}`, '_blank');
+        }
+        
+        // Add hover effects to floating buttons
+        document.querySelectorAll('.float-btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1) translateY(-5px)';
+                this.style.boxShadow = '0 8px 25px rgba(255, 107, 53, 0.4)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1) translateY(0)';
+                this.style.boxShadow = '0 4px 15px rgba(255, 107, 53, 0.3)';
+            });
+        });
+        
+        // Add hover effects to main buttons
+        document.querySelectorAll('.course-btn, .submit-btn, .btn-primary, .btn-secondary').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                if (this.style.background.includes('linear-gradient') || this.classList.contains('btn-primary')) {
+                    this.style.transform = 'translateY(-3px)';
+                    this.style.boxShadow = '0 8px 25px rgba(255, 107, 53, 0.4)';
+                }
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                if (this.style.background.includes('linear-gradient') || this.classList.contains('btn-primary')) {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 4px 15px rgba(255, 107, 53, 0.3)';
+                }
+            });
+        });
+        
+        // Update navigation active link color
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.color = '#FF6B35';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.color = '';
+            });
+        });
+
+        // Add hover effects to advantage cards
+        document.querySelectorAll('.advantage-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 15px 35px rgba(0,0,0,0.1)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 10px 30px rgba(0,0,0,0.05)';
+            });
+        });
+
+        // Add hover effects to testimonial cards
+        document.querySelectorAll('.testimonial-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 15px 35px rgba(0,0,0,0.1)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 10px 30px rgba(0,0,0,0.05)';
+            });
+        });
+    </script>
+    
+    <style>
+        /* Logo styling */
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+        
+        /* Service dropdown styling */
+        select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            background: white;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        select:focus {
+            outline: none;
+            border-color: #FF6B35;
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+        
+        /* Enhanced button styling */
+        .course-btn, .submit-btn {
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .course-btn:hover, .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+        }
+        
+        /* Floating buttons positioning */
+        .floating-buttons {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .logo-img {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .nav-logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .floating-buttons {
+                right: 15px;
+                bottom: 15px;
+            }
+            
+            .float-btn {
+                width: 50px !important;
+                height: 50px !important;
+                margin: 5px 0 !important;
+            }
+            
+            .float-btn i {
+                font-size: 18px !important;
+            }
+        }
+        
+        /* Additional orange accent colors */
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        /* Form focus states */
+        input:focus, textarea:focus, select:focus {
+            border-color: #FF6B35 !important;
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1) !important;
+        }
+        
+        /* Gallery hover effects */
+        .gallery-item:hover .gallery-overlay {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.95) 0%, rgba(247, 147, 30, 0.95) 100%) !important;
+        }
+        
+        /* Stats animation enhancement */
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #FF6B35;
+        }
+        
+        /* Skill orbs enhancement */
+        .skill-orb:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+        }
+        
+        /* Contact items enhancement */
+        .contact-item:hover i {
+            color: #F7931E !important;
+            transform: scale(1.2);
+        }
+        
+        /* Hero buttons responsive */
+        @media (max-width: 576px) {
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                padding: 15px 20px;
+                text-align: center;
+            }
+        }
+        
+        /* Service cards responsive button layout */
+        @media (max-width: 768px) {
+            .course-card div[style*="display: flex"] {
+                flex-wrap: wrap;
+                gap: 8px !important;
+            }
+            
+            .course-card .course-btn {
+                flex: 1;
+                min-width: calc(33.33% - 6px);
+                padding: 10px 15px !important;
+                font-size: 12px !important;
+            }
+        }
+
+        /* Portfolio section enhanced visibility */
+        .gallery-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(255, 107, 53, 0.2);
+        }
+
+        .gallery-overlay {
+            transition: all 0.3s ease;
+        }
+
+        /* Testimonials section styling */
+        .testimonial-rating i {
+            margin-right: 3px;
+        }
+
+        .testimonial-author img {
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover .testimonial-author img {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+    </style>
+</body>
+</html>
