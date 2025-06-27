@@ -53,6 +53,9 @@ def sitemap():
         return Response("Error generating sitemap", status=500)
 
 
+@app.route('/robots.txt')
+def robots():
+    return app.send_static_file('robots.txt')
 
 
 
