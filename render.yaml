@@ -1,10 +1,12 @@
+# Exported from Render on 2025-06-27T13:25:26Z
 services:
-  - type: web
-    name: flask-app
-    env: python
-    plan: free
-    buildCommand: ""
-    startCommand: gunicorn app:app
-    envVars:
-      - key: FLASK_ENV
-        value: production
+- type: web
+  name: Rcom
+  runtime: node
+  repo: https://github.com/inam-1906/Rcom
+  plan: free
+  region: oregon
+  buildCommand: yarn
+  startCommand: gunicorn app:app
+  autoDeployTrigger: commit
+version: "1"
