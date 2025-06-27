@@ -1,8 +1,7 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, Response, make_response,jsonify
 from flask_mail import Mail, Message
 import urllib.parse
-import os
-
+from datetime import datetime
 app = Flask(__name__)
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -12,6 +11,51 @@ app.config['MAIL_USERNAME'] = 'russellsecom@gmail.com'  # Replace with your Gmai
 app.config['MAIL_PASSWORD'] = 'utce coyx hwrn fnqo'     # Replace with Gmail App Password
 app.config['MAIL_DEFAULT_SENDER'] = 'russellsecom@gmail.com'
 mail = Mail(app)
+
+@app.route('/sitemap.xml', methods=['GET'])
+def sitemap():
+    try:
+        # Get domain
+        domain = request.host_url.rstrip('/')
+        
+        # Initialize the URLs list with the homepage
+        pages = []
+        current_time = datetime.now().strftime('%Y-%m-%d')
+        
+        # Add static pages
+        static_pages = [
+            {'loc': '/', 'priority': '1.0', 'changefreq': 'daily'},
+            {'loc': '/services', 'priority': '0.8', 'changefreq': 'weekly'},
+            {'loc': '/contact', 'priority': '0.7', 'changefreq': 'monthly'},
+            # Add more pages based on your website structure
+        ]
+        
+        for page in static_pages:
+            url = f"{domain}{page['loc']}"
+            pages.append({
+                'loc': url,
+                'lastmod': current_time,
+                'priority': page['priority'],
+                'changefreq': page['changefreq']
+            })
+        
+        # Create sitemap XML
+        sitemap_xml = render_template('sitemap.xml', pages=pages)
+        
+        # Create response with proper headers
+        response = make_response(sitemap_xml)
+        response.headers["Content-Type"] = "application/xml"
+        response.headers["Last-Modified"] = current_time
+        return response
+        
+    except Exception as e:
+        app.logger.error(f"Sitemap generation error: {str(e)}")
+        return Response("Error generating sitemap", status=500)
+
+
+
+
+
 
 @app.route('/')
 def index():
@@ -115,6 +159,10 @@ def enroll_course():
         return jsonify({"status": "success", "message": "Enrollment successful! Check your email for confirmation."})
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)})
+
+
+
+
 
 
 if __name__ == "__main__":
