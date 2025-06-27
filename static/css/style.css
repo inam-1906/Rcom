@@ -28,6 +28,7 @@ html {
 }
 
 body {
+    
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: var(--color-white);
@@ -314,10 +315,10 @@ body {
         left: 50%;
         transform: translateX(-50%) translateX(-200%);
         flex-direction: column;
-        width: calc(100% - 30px);
+        width: calc(100% - 0px);
         background: rgba(5, 15, 35, 0.95);
         backdrop-filter: blur(25px);
-        padding: 30px 20px;
+        padding: 20px 0px;
         text-align: center;
         border-radius: 25px;
         border: 2px solid rgba(0, 255, 225, 0.3);
