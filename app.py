@@ -2,8 +2,6 @@ from flask import Flask, render_template, request, Response, make_response,jsoni
 from flask_mail import Mail, Message
 import urllib.parse
 from datetime import datetime
-from flask import redirect
-
 app = Flask(__name__)
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -59,10 +57,6 @@ def sitemap():
 def robots():
     return app.send_static_file('robots.txt')
 
-@app.before_request
-def redirect_to_https():
-    if request.headers.get('X-Forwarded-Proto', 'http') == 'http':
-        return redirect(request.url.replace('http://', 'https://', 1), code=301)
 
 
 
